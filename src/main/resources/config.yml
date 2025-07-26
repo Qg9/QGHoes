@@ -1,0 +1,81 @@
+# in future : plugin (for local eco, using vault), shopgui+, essentials and economyshopgui
+sell: PLUGIN
+# Crops prices defined for PLUGIN way of selling stuff
+plant:
+  WHEAT: 10
+  CARROTS: 8
+  POTATOES: 7
+  BEETROOTS: 6
+  NETHER_WART: 12
+  SWEET_BERRY_BUSH: 5
+  COCOA: 9
+  MELON_STEM: 3
+  PUMPKIN_STEM: 3
+  BAMBOO_SAPLING: 4
+  KELP: 2
+  FROSTED_ICE: 0
+  CAVE_VINES: 11
+  TORCHFLOWER_CROP: 14
+hoes:
+  example:
+    #Items Properties
+    items:
+      type: IRON_HOE
+      enchanted: false
+      name: "&eFarming Hoe"
+      lore:
+        - "&7Example Hoe, break crops to try !"
+      model-data: 0
+      # Update Name or Lore : If you have reactive placeholder in your lore/name
+      # Set to true. Attention : Impact Performance
+      update-name: false
+      update-lore: false
+    # Hoe Property
+    properties:
+      # Attention : It's a radius, not a diameter
+      # Use 0 for 1x1, 1 for 3x3, 2 for 5x5 ...
+      radius: 3
+      # Replant crops when breaked or not ?
+      replant: true
+      #Will the items go directly in inventory or not ?
+      in-inventory: true
+      # Multiply items quantity (impact stats)
+      item-multiplier: 1
+      # Does the items are sold or do we send them to inventory ?
+      sell: false
+      # Doesn't work if sell is false
+      # Multiply Sell Price
+      sell-multiplier: 1
+      # Will we store per-items stats of which and how many blocks were broken
+      # ATTENTION : impact performance !
+      stats: false
+      # IMPORTANT FOR UPGRADES / LEVEL SYSTEM
+      # When shift-click you can open a deluxemenu (as example) using parameters
+      # You have %hoe% for hoe name, %stats_{MATERIAL}% for broken blocks stats, and %player% for playername
+      # You can do a gui with upgrade cost/conditions and when you want an upgrade to the hoe you create another hoe
+      # (as instance leveledhoe) and you use the command /qghoeset <hoe>
+      # ATTENTION: to avoid usebug, player must have his own inventory locked during the time he is in the gui
+      # (it's by default in Deluxemenu)
+      shift-click-action:
+        - "[no]"
+  example2:
+    items:
+      type: DIAMOND_HOE
+      enchanted: false
+      name: "&eFarming Hoe 2"
+      lore:
+        - "&7"
+        - "&fWheat : &e%stats_WHEAT%"
+      update-name: false
+      update-lore: true
+      model-data: 0
+    properties:
+      radius: 4
+      replant: true
+      in-inventory: true
+      stats: true
+      item-multiplier: 1
+      sell: true
+      sell-multiplier: 1
+      shift-click-action:
+        - "[no]"

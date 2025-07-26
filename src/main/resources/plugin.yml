@@ -1,0 +1,21 @@
+name: QgHoes
+main: fr.qg.farmhoe.HoePlugin
+version: 1.0
+api-version: 1.20
+author: QG
+description: "Farming Hoe Plugin, upgrade your farming system !"
+softdepend:
+  - Vault
+commands:
+  qghoegive:
+    usage: /qghoegive <hoeName> [player]
+    description: Give a custom hoe to a player
+    permission: hoe.admin
+  qghoeset:
+    usage: /qghoeset <hoeName> [player]
+    description: Set the hoe in main hand of the player
+    permission: hoe.admin
+  qghoereload:
+    usage: /qghoereload
+    description: Reload the Hoe plugin config
+    permission: hoe.reload
